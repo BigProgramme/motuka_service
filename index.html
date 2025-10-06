@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Écolave Lyon - Lavage Automobile Écologique</title>
+    <meta name="description" content="Spécialiste du lavage automobile écologique à thionville. Services professionnels avec produits biodégradables. Prenez rendez-vous via WhatsApp.">
+    <meta name="keywords" content="lavage auto écologique, Paris, nettoyage voiture, produits biodégradables, économie eau, franchise Écolave">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Écolave Le bourget - Lavage Automobile Écologique">
+    <meta property="og:description" content="Votre spécialiste du lavage automobile écologique à thionville. Services professionnels respectueux de l'environnement.">
+    <meta property="og:type" content="website">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles2.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="images/LOGO_MOTUKA_TERMINER_JPG.jpg" alt="Écolave" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="logo-icon" style="display: none;">É</div>
+                    <span class="logo-text"><span class="logo-eco">MOTUKA SERVICE</span></span>
+                </div>
+
+                <!-- Navigation Desktop -->
+                <nav class="nav-desktop">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#galerie" class="nav-link">Galerie</a>
+                    <a href="#avis" class="nav-link">Avis</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- CTA Buttons Desktop -->
+                <div class="cta-buttons-desktop">
+                    <button class="btn btn-outline" onclick="window.open('tel:+330780806038')">
+                        <i class="fas fa-phone"></i> 07 80 80 60 38
+                    </button>
+                    <button class="btn btn-eco" onclick="openWhatsApp('')">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="menu-icon"><i class="fas fa-bars"></i></span>
+                    <span class="close-icon" style="display: none;"><i class="fas fa-times"></i></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#accueil" class="mobile-nav-link" onclick="closeMobileMenu()">Accueil</a>
+                    <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+                    <a href="#galerie" class="mobile-nav-link" onclick="closeMobileMenu()">Galerie</a>
+                    <a href="#avis" class="mobile-nav-link" onclick="closeMobileMenu()">Avis</a>
+                    <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+                    
+                    <div class="mobile-cta-buttons">
+                        <button class="btn btn-outline" onclick="window.open('tel:+330780806038')">
+                            <i class="fas fa-phone"></i> 07 80 80 60 38
+                        </button>
+                        <button class="btn btn-eco" onclick="openWhatsApp('')">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-background">
+            <img src="images/IMG-20251003-WA0016.jpg" alt="Station de lavage Écolave moderne et écologique" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-wrapper">
+                    <!-- Badge -->
+                    <div class="hero-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Lavage 100% Écologique</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="hero-title">
+                        Votre voiture<br>
+                        <span class="hero-title-highlight">impeccable</span><br>
+                        <span class="hero-title-highlight">sans gaspillage</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="hero-subtitle">
+                        Lavage automobile professionnel avec des produits écoresponsables. 
+                        Sublimons & Préservons votre véhicule, chaque détail compte.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <i class="fas fa-tint"></i> <span>Économie d'eau</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-leaf"></i> <span>Produits biodégradables</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-star"></i> <span>Résultat professionnel</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta">
+                        <button class="btn btn-eco btn-lg hero-btn" onclick="openWhatsApp('Bonjour, je souhaite prendre rendez-vous pour un lavage automobile')">
+                            <i class="fab fa-whatsapp"></i> Prendre RDV WhatsApp
+                        </button>
+                        <button class="btn btn-secondary btn-lg hero-btn" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                            Découvrir nos services
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">500+</div>
+                            <div class="hero-stat-label">Véhicules lavés</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">98%</div>
+                            <div class="hero-stat-label">Clients satisfaits</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">-60%</div>
+                            <div class="hero-stat-label">D'eau économisée</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Nos <span class="text-primary">Services</span>
+                </h2>
+                <p class="section-subtitle">
+                    Des prestations complètes pour prendre soin de votre véhicule tout en respectant l'environnement
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/IMG-20251003-WA0045.jpg" alt="Lavage extérieur professionnel">
+                        <div class="service-overlay">
+                            <div class="service-icon"><i class="fas fa-car"></i></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Lavage Extérieur</h3>
+                        <p class="service-description">
+                            Nettoyage complet de la carrosserie avec des produits biodégradables. 
+                            Rinçage haute pression et séchage minutieux.
+                        </p>
+                        <ul class="service-features">
+                            <li>Prélavage et décontamination</li>
+                            <li>Lavage avec produits éco-certifiés</li>
+                            <li>Rinçage et séchage professionnel</li>
+                        </ul>
+                       
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/IMG-20251003-WA0048.jpg" alt="Nettoyage intérieur détaillé">
+                        <div class="service-overlay">
+                            <div class="service-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Nettoyage Intérieur</h3>
+                        <p class="service-description">
+                            Aspiration complète, nettoyage des sièges et surfaces. 
+                            Désinfection et désodorisation écologique.
+                        </p>
+                        <ul class="service-features">
+                            <li>Aspiration tapis et sièges</li>
+                            <li>Nettoyage tableau de bord</li>
+                            <li>Désodorisation naturelle</li>
+                        </ul>
+                       
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/IMG-20251003-WA0022.jpg" alt="Polissage et protection">
+                        <div class="service-overlay">
+                            <div class="service-icon"><i class="fas fa-sparkles"></i></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Polissage & Protection</h3>
+                        <p class="service-description">
+                            Rénovation de la peinture et application de protection longue durée. 
+                            Redonne brillance et éclat à votre véhicule.
+                        </p>
+                        <ul class="service-features">
+                            <li>Correction des micro-rayures</li>
+                            <li>Polissage professionnel</li>
+                            <li>Protection céramique ou cire</li>
+                        </ul>
+                       
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/IMG-20251003-WA0041.jpg" alt="Préparation complète">
+                        <div class="service-overlay">
+                            <div class="service-icon"><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Préparation Complète</h3>
+                        <p class="service-description">
+                            Service premium combinant tous nos soins : extérieur, intérieur, 
+                            polissage et protection. Le summum du detailing écologique.
+                        </p>
+                        <ul class="service-features">
+                            <li>Lavage extérieur + intérieur</li>
+                            <li>Polissage et protection</li>
+                            <li>Finitions premium</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="services-cta">
+                <p class="services-cta-text">
+                    Besoin d'un devis personnalisé ? Contactez-nous !
+                </p>
+                <button class="btn btn-eco" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Demander un devis
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <!-- Gallery Section -->
+    <section id="galerie" class="gallery">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+        <h2 class="section-title">
+            Nos <span class="text-primary">Réalisations</span>
+        </h2>
+        <p class="section-subtitle">
+            Découvrez la transformation avant/après de nos véhicules
+        </p>
+        </div>
+
+        <!-- Before/After Carousel -->
+        <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="images/avant_apres_2.png" alt="Avant/Après - SUV Complet">
+            <div class="carousel-caption">
+            <h3>Polissage professionnel des phares</h3>
+            <p>Restauration complète des phares - Clarté et sécurité retrouvées</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/IMG-20251003-WA0041.jpg" alt="Avant/Après - Berline Premium">
+            <div class="carousel-caption">
+            <h3>Berline Premium</h3>
+            <p>Polissage et protection d'une berline de luxe</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/IMG-20251003-WA0020.jpg" alt="Avant/Après - Citadine">
+            <div class="carousel-caption">
+            <h3>Citadine</h3>
+            <p>Remise en état d'une petite citadine</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/avant_apres.png" alt="Avant/Après - Utilitaire">
+            <div class="carousel-caption">
+            <h3>Véhicule Utilitaire</h3>
+            <p>Nettoyage professionnel d'un véhicule de travail</p>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="carousel-prev" onclick="changeSlide(-1)">‹</button>
+        <button class="carousel-next" onclick="changeSlide(1)">›</button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <span class="carousel-dot" onclick="goToSlide(0)"></span>
+            <span class="carousel-dot" onclick="goToSlide(1)"></span>
+            <span class="carousel-dot" onclick="goToSlide(2)"></span>
+            <span class="carousel-dot" onclick="goToSlide(3)"></span>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="avis" class="testimonials">
+        <div class="container">
+            <h3 class="testimonials-title">
+                <br/>
+            Ils nous font <span class="text-primary">confiance</span>
+            </h3>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                    "Service exceptionnel ! Mon véhicule est comme neuf après leur passage. 
+                    Le respect de l'environnement est un vrai plus, je recommande à 100%."
+                    </p>
+                    <div class="testimonial-author">- Saint Heraud.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                    "Service impeccable ! Ma voiture n'avait jamais été aussi propre. 
+                    J'apprécie particulièrement l'aspect écologique."
+                    </p>
+                    <div class="testimonial-author">- Marie L.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                    "Équipe professionnelle et produits respectueux de l'environnement. 
+                    Je recommande vivement !"
+                    </p>
+                    <div class="testimonial-author">- Pierre M.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                    "Excellent rapport qualité-prix. Le polissage a redonné une seconde 
+                    jeunesse à ma voiture."
+                    </p>
+                    <div class="testimonial-author">- Sophie B.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    Prenez <span class="text-primary">Rendez-vous</span>
+                </h2>
+                <p class="section-subtitle">
+                    Contactez-nous pour réserver votre créneau ou obtenir un devis personnalisé
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <div class="contact-form-header">
+                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                        <h3>Formulaire de contact</h3>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="07 80 80 60 38" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre demande *</label>
+                            <textarea id="message" name="message" placeholder="Précisez le type de service souhaité, votre véhicule, etc." required></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-eco">
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                            </button>
+                            <button type="button" class="btn btn-outline" onclick="sendWhatsAppFromForm()">
+                                <i class="fab fa-whatsapp"></i> Via WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <!-- Quick Contact -->
+                    <div class="contact-info-card">
+                        <h3>
+                            <i class="fas fa-comments"></i> Contact rapide
+                        </h3>
+                        <div class="contact-buttons">
+                            <button class="btn btn-eco contact-btn" onclick="openWhatsApp('Bonjour, je souhaite prendre rendez-vous')">
+                                <i class="fab fa-whatsapp"></i> WhatsApp : 07 80 80 60 38
+                            </button>
+                            <button class="btn btn-outline contact-btn" onclick="window.open('tel:+330780806038')">
+                                <i class="fas fa-phone"></i> Téléphone : 07 80 80 60 38
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Address & Hours -->
+                    <div class="contact-info-card">
+                        <h3>
+                            <i class="fas fa-map-marker-alt"></i> Adresse & Horaires
+                        </h3>
+                        <div class="contact-address">
+                            <div class="address">
+                                <div class="address-name">Écolave Le Bourget</div>
+                                <div class="address-text">
+                                    6 Rue Camille du Gast<br>
+                                    57100 Thionville <br>
+                                    France
+                                </div>
+                            </div>
+                            
+                            <div class="hours">
+                                <span class="icon"><i class="fas fa-clock"></i></span>
+                                <div>
+                                    <div class="hours-title">Horaires d'ouverture :</div>
+                                    <div class="hours-list">
+                                        <div>Lundi - Vendredi : 8h - 18h</div>
+                                        <div>Samedi : 9h - 15h</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="contact-info-card">
+                        <div class="map-placeholder">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="images/LOGO_MOTUKA_TERMINER_JPG.jpg" alt="Écolave" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        </div>
+                        <span class="logo-text"><span class="logo-eco">
+                            MOTUKA SERVICE
+                        </span></span>
+                    </div>
+                    <p class="footer-description">
+                        Votre franchisé Écolave Le Bourget. Spécialiste du lavage automobile écologique 
+                        avec des produits biodégradables et une économie d'eau de 60%.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-list">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#services">Nos Services</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#avis">Avis Clients</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Nos Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="#services">Lavage Extérieur</a></li>
+                        <li><a href="#services">Nettoyage Intérieur</a></li>
+                        <li><a href="#services">Polissage & Protection</a></li>
+                        <li><a href="#services">Préparation Complète</a></li>
+                        <li><a href="#contact">Devis Personnalisé</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i> 6 Rue Camille du Gast<br>57100 Thionville <br>France
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i> 07 80 80 60 38
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i> lebourget@ecolave.fr
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Écolave Le Bourget - Tous droits réservés </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
